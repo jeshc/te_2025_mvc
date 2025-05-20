@@ -1,10 +1,20 @@
 package mx.unam.aragon.ico.te.musicamvc.modelos;
 
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
+@Entity
+@Table(name = "artists")
 public class Artista {
-    private int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "name", nullable = false)
     private String nombre;
+
     private String genero;
     private Integer edad;
     private String descripcion;
